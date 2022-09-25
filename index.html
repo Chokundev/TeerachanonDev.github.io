@@ -1,12 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-</head>
-<body>
-    <h1>Hello world</h1>
+  <head>
+    <title>ระบบตรวจสอบสิทธิในการแข่งขัน</title>
+    <!-- Required meta tags -->
+    <base target="_top">
+     <!--font awesome-->
+    <script src="https://kit.fontawesome.com/ad42651166.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Sarabun' rel='stylesheet' type='text/css'>
+ 
+<style type='text/css'>
+
+
+ 
+@font-face {
+  font-family: 'Sarabun';
+}
+ 
+body { 
+  font-family: 'Sarabun' !important;
+   }
+ 
+::placeholder {
+  color: peachpuff;
+  font-size: 16px;
+  text-align: center;
+}
+ 
+</style>
+ 
+  </head>
+  <body>
+    
+    </button>
+<div class="container">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-warning ">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <h4 class="prompt text-white"><img src="https://scontent.fkdt3-1.fna.fbcdn.net/v/t1.15752-9/298198722_3187330488186113_4619198919619593284_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEweWpMfVo39VpyQodlmnYfVmW9YDXR6fVWZb1gNdHp9aH0t0rviqdKfUllqo779y4qy7M8AHr5tfk0gDxkOVKb&_nc_ohc=H2oWnXxi0FAAX98_BnX&_nc_ht=scontent.fkdt3-1.fna&oh=03_AVKRXJxF8IyLJ8E4L9QZFdapt-XGxW2sMNHOUuTFi8NHcw&oe=6331DBFE" weight="60" height="60">ระบบตรวจสอบสิทธิในการแข่งขัน BN-Esport </h4>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sites.google.com/bn.ac.th/bn-esport" target="_blank"><i class="fas fa-home mr-2"></i>หน้าหลัก</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ <div class="alert alert-warning" role="alert" background-color: #ffed00>
+        <h6 class="font-weight-bold"><i class="fas fa-book-reader "></i>
+         วิธีการค้นหาข้อมูล</h6>
+        <p>1. ให้ผู้สมัครพิมพ์เลขประจำตัวนักเรียนจำนวน 5 หลัก ลงในช่องค้นหา 
+       <br>2.ระบบจะแสดงผลข้อมูลให้โดยอัตโนมัติ หลักจากกรอกเลขประจำตัวครบ 5 หลัก
+       <br>3. หากพบปัญหาของระบบโปรดติดต่อ <a href="#">ผู้พัฒนาระบบ</a>
+       </p>
+
+ </div> 
+<marquee>โปรดติดตามรายละเอียดการแข่งขันอย่างใกล้ชิด</marquee>
+<br>
+ <br>
+ <div class="container">
+
+ <div class="row">
+ <div class="col">
+ <!-- 1 of 3 -->
+ </div>
+ <div class="col-md-auto">
+     <div class="card border-dark">     
+                   <h5 class="card-header text-white bg-dark"><i class="far fa-address-card mr-3"></i>พิมพ์เลขประจำตัวนักเรียน 5 หลัก</h5>
+                   <div class="card-body"><input class="form-control form-control-lg" type="text" id="idStudent" placeholder="พิมพ์เลขประจำตัวนักเรียน" maxlength="5"></div>
+               </div> 
+ 
+ </div>
+    
+ <div class="col">
+ </div>
+ </div>
+ </div>
+ 
+ <div class="container">
+ <div class="row">
+ <div class="col-md">
+ </div>
+ <div class="col-md">
+ 
+ <br>
+   
+ </div>
+ <div class="col-md">
+ </div>
+ </div>
+ </div>
+ 
+ <div class="container">
+ <div class="row">
+ <div class="col">
+ </div>
+ <div class="col-5">
+ <center><span class="badge badge-dark">ผลการค้นหาข้อมูล</span></center>
+ <br>
+ <center> <input type="button" class = "btn btn-success btn-lg" id="home-btn" value = "ตรวจสอบใหม่อีกครั้ง" onclick ="Home()" ></center>
+ </div>
+ <!-- Result Header End -->
+ 
+ <br>
+ 
+ <div class="col">
+ </div>
+ </div>
+ 
+
+ <div class="row">
+ <div class="col">
+ </div>
+ <div class="col-md-auto">
+ 
+ <br>
+ 
+ <div class="container">
+ <div id="search">
+ <textarea style="border:none;resize:none;" id="search" readonly></textarea>
+ </div>
+ </div>
+ 
+ </div>
+ <div class="col">
+    </div>
+ </div>
+ </div>
+ 
+</div>
+<!-- Footer -->
+<div class="container">
+        <footer><br>
+            <div class="bg-dark">
+                <div class="container">
+                    <br>
+                    <div class="row">
+                        <div class="clo-lg-3 col-md-auto">
+                          <center>
+                            <h6 class="prompt text-white" ><i class="fa fa-user-circle-o mr-3"></i>2022 © นายธีรชานนท์ พวงเงิน  ฝ่ายเทคโนโลยีคณะกรรมการนักเรียนโรงเรียนวัดบวรนิเวศ</h6>\
+                          </center>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+        <!-- ปิดแทก Footer -->
+<script>
+ 
+document.getElementById("idStudent").addEventListener("input", findCode);
+  
+
+ function findCode() {
+ var code = document.getElementById("idStudent").value;
+ if(code.length === 5){
+    google.script.run.withSuccessHandler(updateData).getCode(code);
+
+ }
+}
+
+function updateData(data) {
+  if(data == '**ไม่พบข้อมูล**'){
+    Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'ยินดีด้วย คุณมีสิทธิในการลงทะเบียนแข่งขัน',
+  showConfirmButton: true,
+  confirmButtonText:'ยืนยัน' ,
+  footer: '<a href="https://sites.google.com/bn.ac.th/bnstudentcommission/e-service/register">ลงทะเบียนแข่งขัน</a>'
+  //timer: 1500
+})
+ document.getElementById("search").innerHTML = data;
+ M.updateTexfields();
+}else{
+Swal.fire({
+  position: 'center',
+  icon: 'error',
+  title: 'เสียใจด้วย คุณไม่มีสิทธิในการแข่งขัน',
+  
+  showConfirmButton: true,
+  
+  //timer: 2000
+})
+ document.getElementById("home-btn").style.visibility="visible"
+ document.getElementById("search").innerHTML = data;
+ M.updateTexfields();
+
+  }
+}
+window.onload = function(){document.getElementById("home-btn").style.visibility="hidden"}
+
+function Home(){
+google.script.run.withSuccessHandler(function(url){
+window.open(url,'_top')
+}).getURL()
+
+}
+
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
 </body>
 </html>
