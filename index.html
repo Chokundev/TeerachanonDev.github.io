@@ -90,6 +90,75 @@
         padding:20px;
     }
 }
+
+.skill-box .title{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.skill-box .skill-bar{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0,0,0,0.1);
+}
+.skill-bar .skill-per{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+.skill-per.css{
+    width: 70%;
+    animation-delay: 0.1s;
+}
+.skill-per.javascript{
+    width: 50%;
+    animation-delay: 0.2s;
+}
+.skill-per.nodejs{
+    width: 30%;
+    animation-delay: 0.3s;
+}
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.skill-per .tooltip{
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 9px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #4070f4;
+    z-index: 1;
+}
+.tooltip::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateX(-50%) rotate(45deg);
+
+}
     </style>
 
 </head>
@@ -104,28 +173,28 @@
         <div class="box">
             <img src="image/01 (1).jpg" alt="">
             <h3>หลักสูตร <br/> Basic CyberSecurity</h3>
-            <p>ผ่านการฝึกทักษะอบรมออนไลน์ ของ กรมพัฒนาฝึมือแรงงาน</p>
+            <p>ผ่านการฝึกทักษะออนไลน์<br/> ของ กรมพัฒนาฝึมือแรงงาน</p>
             <button class="btn" onclick="btn1()">read more</button>
         </div>
 
         <div class="box">
             <img src="image/02.png" alt="">
-            <h3>CSS 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <h3>เขียนโปรแกรม DEVLAB 3</h3>
+            <p>เขียนโปรแกรมภาษา Python <br/> ใน DevLab3 ผ่านเกณฑ์มาตรฐาน</p>
             <a href="#" class="btn">read more</a>
         </div>
 
         <div class="box">
             <img src="image/01 (2).jpg" alt="">
-            <h3>JavaScript</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <h3>เรียนหลักสูตร <br/> Data Science Tools</h3>
+            <p>เรียนผ่านหลักสูตร<br/>เครื่องมือด้านวิทยาการข้อมูล <br/>ของ มหาวิทยาลัยสงขลานครินทร์</p>
             <a href="#" class="btn">read more</a>
         </div>
 
         <div class="box">
             <img src="image/01 (10).jpg" alt="">
-            <h3>SASS</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <h3>เรียนหลักสูตร  Application No Programming</h3>
+            <p>เรียนผ่านหลักสูตร<br/>สร้างโมบายแอปพลิเคชั่นง่ายๆ <br/>ของ มหาวิทยาลัยสงขลานครินทร์</p>
             <a href="#" class="btn">read more</a>
         </div>
 
@@ -187,8 +256,8 @@
 
         <div class="box">
             <img src="image/01 (3).jpg" alt="">
-            <h3>React.js</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <h3>หลักสูตรเพิ่มประสิทธิภาพการทำงาน<br/>โดย Google Application</h3>
+            <p>ผ่านการฝึกทักษะออนไลน์ <br/>ของ กรมพัฒนาฝึมือแรงงาน</p>
             <a href="#" class="btn">read more</a>
         </div>
 
@@ -239,13 +308,20 @@
 
     </div>
 
-</div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
-<div class="container">
     <footer>
-        <h4>2022 Teerachanon</h4>
+        
+        <h4>2022 © นายธีรชานนท์ พวงเงิน</h4>
     </footer>
 </div>
+
+
+    
+
 
 <script src="script/script.js"></script>
 
