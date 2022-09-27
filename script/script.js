@@ -14,8 +14,8 @@ function btn1(){
 
 function btn2(){
     Swal.fire({        
-        imageUrl: "image/02).jpg",
-        imageWidth: 505,
-        imageHeight: 670,
+        imageUrl: "image/02.png",
+        imageWidth: 670,
+        imageHeight: 505,
       })
 }
