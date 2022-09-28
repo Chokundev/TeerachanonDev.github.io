@@ -108,3 +108,59 @@ function btn11(){
       imageHeight: 400,
     })
 }
+
+function btn12(){
+  Swal.fire({        
+      imageUrl: "image/01 (3).jpg",
+      imageWidth: 505,
+      imageHeight: 670,
+    })
+}
+
+function btn13(){
+  Swal.fire({        
+      imageUrl: "image/01 (4).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
+
+function btn14(){
+  Swal.fire({        
+      imageUrl: "image/01 (5).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
+
+function btn15(){
+  Swal.fire({        
+      imageUrl: "image/01 (6).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
+
+function btn16(){
+  Swal.fire({        
+      imageUrl: "image/01 (7).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
+
+function btn17(){
+  Swal.fire({        
+      imageUrl: "image/01 (8).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
+
+function btn18(){
+  Swal.fire({        
+      imageUrl: "image/01 (9).jpg",
+      imageWidth: 750,
+      imageHeight: 400,
+    })
+}
