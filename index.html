@@ -84,15 +84,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
     <script>
-
-        function noti() {
-            Swal.fire({
-                title: 'ผิดพลาด',
-                text: 'ฟังก์ชั่นนี้ยังไม่เปิดใช้งาน',
-                icon: 'error',
-                confirmButtonText: 'ยืนยัน'
-            })
-        }
+        let timerInterval
+        Swal.fire({
+            title: 'กำลังโหลดข้อมูล',
+            html: 'จะโหลดเสร็จใน <b></b> milliseconds.',
+            timer: 900,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+            }
+        })
+        // function noti() {
+        //     Swal.fire({
+        //         title: 'ผิดพลาด',
+        //         text: 'ฟังก์ชั่นนี้ยังไม่เปิดใช้งาน',
+        //         icon: 'error',
+        //         confirmButtonText: 'ยืนยัน'
+        //     })
+        // }
     </script>
 </body>
 
