@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ดูเกรดวัดบวรนิเวศ,ดูเกรด บ.น.,บวรนิเวศดูเกรด,MIS BN,watbowonniwet,bowonniwet">
+    <meta name="author" content="โรงเรียนวัดบวรนิเวศ">
+    <META http-equiv="expires" content="0">
+
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TJTC3TBXJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0TJTC3TBXJ');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41060493-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41060493-1');
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4ZZSXC7J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H4ZZSXC7J6');
+</script>-->
+
+    <title>ระบบสารสนเทศนักเรียน โรงเรียนวัดบวรนิเวศ (BN•MIS)</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sarabun|Kanit|Sarabun:700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="floating-labels.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 14px !important;
+        }
+
+        .blinking_animate {
+            display: inline;
+            animation: blinkingText 0.95s steps(1) infinite;
+        }
+
+        @keyframes blinkingText {
+            50% {
+                opacity: 0;
+            }
+        }
+
+
+        .linehight_login {
+            line-height: 40px;
+        }
+
+        html,
+        body,
+        form,
+        fieldset,
+        table,
+        tr,
+        td,
+        img {
+            font-family: 'Sarabun', Tahoma !important;
+        }
+
+        .swal2-title {
+            font-size: 20px !important;
+            line-height: 35px !important;
+        }
+
+        h1 {
+            font-family: 'Sarabun' !important;
+            line-height: 40px !important;
+
+        }
+
+        strong {
+            font-family: 'Sarabun', Tahoma !important;
+            font-weight: 700;
+        }
+
+        .noDecoration,
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+    </style>
+    <script src="http://malsup.github.io/jquery.blockUI.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $(".forgot_password_stu").click(function () {
+                $('#Modal_Forgot_Password_Student').modal('show');
+            });
+
+
+            $('#nation_id_stu').focus();
+            $('#btnLogin').click(function () {
+                var input_nation_id_stu = $('#nation_id_stu').val().trim();
+                var input_password_stu = $('#password_stu').val().trim();
+                if (input_nation_id_stu !== '' && input_password_stu !== '') {
+                    $.ajax({
+                        url: 'ajax/fetch_data_and_grade.php',
+                        data: { nation_id_stu: input_nation_id_stu, password_stu: input_password_stu, action_login: true },
+                        dataType: 'JSON',
+                        type: 'POST',
+                        beforeSend: function () {
+                            // setting a timeout
+                            $.blockUI({
+                                message: '<div class="text-center"><img src="image/ajax-loader.gif" class="mr-1">Loading..</div>',
+                                css: {
+                                    border: 'solid 3px #7f7c7c', 'font-size': '17px',
+                                    padding: '25px',
+                                    backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px',
+                                    opacity: 0.7,
+                                    color: '#fff', 'border-radius': '7px'
+                                },
+                                baseZ: 20000
+                            });
+                        },
+                        success: function (data) {
+                            setTimeout($.unblockUI({
+                                css: {
+                                    border: 'solid 3px #7f7c7c', 'font-size': '17px',
+                                    padding: '25px',
+                                    backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px',
+                                    opacity: 0.7,
+                                    color: '#fff', 'border-radius': '7px'
+                                },
+                                baseZ: 20000
+                            }), 7200);
+                            if (data.status) {
+                                //alert("นักเรียนผู้ใช้ชื่อ : "+data.tbl_stu_fullname+" - กำลังเข้าสู่ระบบ");
+
+                                Swal.fire({
+                                    title: data.message_title,
+                                    html: data.message_sub,
+                                    type: data.status,
+                                    confirmButtonText: "ตกลง",
+                                    allowOutsideClick: false
+                                }).then(function () {
+                                    window.location = "dashborad?page=home";
+                                });
+
+
+                            }
+                            else {
+                                Swal.fire({
+                                    title: data.message_title,
+                                    html: data.message_sub,
+                                    type: data.status,
+                                    confirmButtonText: "ตกลง",
+                                    allowOutsideClick: false
+                                }).then(function () {
+                                    //alert(data.error);
+                                    $('#nation_id_stu').focus();
+                                    return;
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                    setTimeout($.unblockUI({
+                        css: {
+                            border: 'solid 3px #7f7c7c', 'font-size': '17px',
+                            padding: '25px',
+                            backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px',
+                            opacity: 0.7,
+                            color: '#fff', 'border-radius': '7px'
+                        },
+                        baseZ: 20000
+                    }), 7200);
+                    Swal.fire({
+                        title: '<h2 class="font-weight-bold">โปรดระบุ !</h2>',
+                        html: '<hr><span style="line-height:40px;" class="font-weight-bold h5">👉 เลขประจำตัวประชาชน 13 หลัก และ<br>รหัสผ่าน [วว/ดด/ปปปป] เพื่อเข้าสู่ระบบ<hr>[คลิกปุ่ม <u>ตกลง</u> เพื่อกลับสู่ 🏡 หน้าหลัก]</span>',
+                        type: "error",
+                        confirmButtonText: "ตกลง",
+                        allowOutsideClick: false
+                    }).then(function () {
+                        //alert(data.error);
+                        $('#nation_id_stu').focus();
+                        return;
+                    });
+                    //alert('[โปรดระบุ] 👉 เลขประจำตัวประชาชน และ รหัสผ่าน เพื่อเข้าสู่ระบบ 🐵');
+                    //$('#nation_id_stu').focus();
+                    //return;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="modal fade" id="Modal_Forgot_Password_Student" class="modal fade" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">กู้รหัสผ่าน (Account recovery)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success" style="margin: 5px auto;" role="alert">
+                        <strong><u>ส่งข้อมูล</u></strong> เข้า E-mail เพื่อขอรหัสผ่านใหม่</div>
+                    <form>
+
+                        <div class="form-group">
+                            <label for="old_password" class="col-form-label">เลขประจำตัวประชาชน :</label>
+                            <input type="text" class="form-control" id="old_password"
+                                placeholder="🔢 ระบุ เลขประจำตัวประชาชน ปชช. 13 หลัก">
+                        </div>
+                        <div class="form-group">
+                            <label for="enter_email" class="col-form-label">E-mail ที่ลงทะเบียนไว้ :</label>
+                            <input id="enter_email" type="email" class="form-control" aria-describedby="emailHelp"
+                                placeholder="📧 ระบุ E-mail">
+                        </div>
+                        <hr>
+                        <ul>
+                            <li><span class="text-danger"><strong>หากลืม/ไม่ได้ลงทะเบียน E-mail* </strong></span>
+                                ให้ติดต่อ : </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-signin">
+        <div class="text-center mb-2">
+            <img class="mb-1" src="image/bn_logo.png" width="120">
+            <h1 class="h3 mb-2 font-weight-normal"><span style="color: #ffcc00;" class="font-weight-bold">B</span><span
+                    style="color: #000000;" class="font-weight-bold">N</span> • MIS <br><small><i
+                        class="fas fa-chart-line mr-2"></i></small><span
+                    style="letter-spacing: 1px;">สารสนเทศผลการเรียน</span></h1>
+        </div>
+
+        <div class="alert alert-danger text-center font-weight-bold h5" role="alert">
+            <span style="display:show;"><span class="blinking_animate font-weight-bold"><i
+                        class="fas fa-exclamation-circle mr-1"></i>ประกาศผลการเรียน 1/2565</span>
+                <hr class="mt-2 mb-2">1 ตุลาคม 2565 เวลา 16.00 น.
+                <hr class="mt-2 mb-2">เลขประชาชน <br>ไม่ต้องใส่เครื่องหมาย - (ขีดกลาง) <br> รหัสผ่าน วันเดือนปี พ.ศ.เกิด
+                <br> ใส่เครื่องหมาย / (ทับ) ด้วย
+            </span>
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="form-group">
+            <input type="text" id="nation_id_stu" name="nation_id_stu" class="form-control form-control-lg text-center"
+                placeholder="ชื่อผู้ใช้ : 🔢 เลขประชาชน 13 หลัก" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+            <input type="password" id="password_stu" name="password_stu"
+                class="form-control form-control-lg text-center" placeholder="วันเดือนปีเกิด : 🔒 เช่น 31/12/2565"
+                autocomplete="off">
+
+        </div>
+        <!--<div class="form-group text-right "><strong><a href="#" class="noDecoration forgot_password_stu text-danger">(ลืมรหัสผ่าน ?)</a></strong></div>!-->
+        <button class="btn btn-lg btn-primary btn-block" name="btnLogin" id="btnLogin">คลิกเข้าสู่ระบบ</button>
+        <hr>
+        <p class="mt-3 mb-3 text-muted text-center"><a href="#" class="btn btn-danger btn-lg btn-block" role="button"
+                aria-disabled="false">ตารางสอบซ่อม ครั้งที่ 2 (รอประกาศ)</a></p>
+        <p class="mt-3 mb-3 text-muted text-center">ต้องการพิมพ์ใบแจ้งผลสอบ เชิญที่ ระบบประกาศผลสอบ Server 2 (ระบบเดิม)
+        </p>
+        <p class="mt-3 mb-3 text-muted text-center"><a href="http://authen.bn.ac.th:8087/semester6501"
+                class="btn btn-info btn-lg btn-block" role="button" aria-disabled="false">ระบบประกาศผล Server 2 </a></p>
+        <hr>
+        <p class="mt-3 mb-3 text-muted text-center">&copy; 2022 งานทะเบียน-วัดผล โรงเรียนวัดบวรนิเวศ</p>
+        <hr>
+        <div style="line-height: 33px;" class="alert alert-warning text-center  font-weight-bold h5" role="alert">🕐
+            ปรับปรุงข้อมูลเมื่อ<br>12 ตุลาคม 2565 เวลา 21.40 น.<br>เพื่อแก้ไขผลการสอบซ่อมครั้งที่
+            1<br>และวันเดือนปีเกิดตามที่แจ้งมา </div>
+        <p class="mt-1 mb-3 text-muted text-center">พบปัญหา/ข้อสงสัย ในการใช้งานระบบ<br>เช่น เลขประชาชน
+            หรือวันเดือนปีเกิดในระบบอาจไม่ถูกต้อง ทำให้เข้าระบบไม่ได้ <br>โปรดติดต่อ <a
+                href="https://www.facebook.com/magamura/" class="link-primary">ครูจรูญ พิทักษ์ไชยวงศ์</a><br>ห้อง Server
+            ชั้น 3 อาคารวชิรญาณวงศ์ <br>โทร.0-2282-0025 ต่อ 123 ในวันเวลาราชการ เพื่อแก้ไข<br>ส่วนคะแนน ผลสอบ
+            ให้ติดต่อครูผู้สอนโดยตรง<br> <!--BEGIN WEB STAT CODE-->
+            <script type="text/javascript"> page = "GPA_MIS_01-2565_Home";</script>
+            <script type="text/javascript" src="http://hits.truehits.in.th/data/c0001754.js"></script>
+            <noscript>
+                <a target="_blank" href="http://truehits.net/stat.php?id=c0001754"><img
+                        src="http://hits.truehits.in.th/noscript.php?id=c0001754" alt="Thailand Web Stat" border="0"
+                        width="14" height="17" /></a>
+                <a target="_blank" href="http://truehits.net/">Truehits.net</a>
+            </noscript>
+            <!-- END WEBSTAT CODE -->
+        </p>
+        <hr>
+        <!--<p class="mb-3 text-muted text-center">V1.5 Last Update Script : 02-04-2563<br>ปรับเป็นแสดงผลการเรียน 6 ภาคเรียน<br>Up2Host pw.ac.th <br>Fix code for performance & Faster ?<br>Using a JSON Pure</p> !-->
+    </div>
+</body>
+
+</html>
