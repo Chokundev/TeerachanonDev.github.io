@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/mapsvg/css/mapsvg.css" rel="stylesheet">
+    <link href="/mapsvg/css/nanoscroller.css" rel="stylesheet">
+    <script src="/mapsvg/js/jquery.js"></script>
+    <script src="/mapsvg/js/jquery.mousewheel.min.js"></script>
+    <script src="/mapsvg/js/jquery.nanoscroller.min.js"></script>
+    <script src="/mapsvg/js/mapsvg.min.js"></script>
+</head>
+
+<body>
+    <div id="mapsvg"></div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#mapsvg").mapSvg({ markerLastID: 9, width: 1920, height: 1080, viewBox: [0, 0, 1920, 1080], zoom: { on: true, limit: [0, 17], delta: 2, buttons: { on: true, location: "right" }, mousewheel: true }, scroll: { on: false, limit: false, background: false, spacebar: false }, tooltips: { mode: "off", on: false, priority: "local", position: "bottom-right" }, popovers: { mode: "off", on: false, priority: "local", position: "top", centerOn: true, width: 300, maxWidth: 50, maxHeight: 50, resetViewboxOnClose: true, mobileFullscreen: true }, gauge: { on: false, labels: { low: "low", high: "high" }, colors: { lowRGB: { r: 85, g: 0, b: 0, a: 1 }, highRGB: { r: 238, g: 0, b: 0, a: 1 }, low: "#550000", high: "#ee0000", diffRGB: { r: 153, g: 0, b: 0, a: 0 } }, min: 0, max: false }, source: "/mapsvg/maps/user-uploads/BN-Map-_1_.svg", title: "BN-Map-_1_", markers: [{ id: "marker_1", attached: true, isLink: false, tooltip: "ตึกมนุษยนาควิทยาทาน", popover: "ตึกมนุษยนาควิทยาทาน", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 473.3546325878594, y: 290.54313099041536 }, { id: "marker_2", attached: true, isLink: false, tooltip: "สนาม", popover: "สนาม", data: {}, src: "/mapsvg/markers/Map-marker-02.svg", width: 43, height: 65, x: 804.6006389776358, y: 157.63578274760383 }, { id: "marker_3", attached: true, isLink: false, tooltip: "ตึกอรพินท์ุ", popover: "ตึกอรพินท์ุ", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1172.6517571884983, y: 233.29073482428115 }, { id: "marker_4", attached: true, isLink: false, tooltip: "อาคารวชิรญาณวงศ์\n", popover: "อาคารวชิรญาณวงศ์\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1283.067092651757, y: 337.57188498402553 }, { id: "marker_5", attached: true, isLink: false, tooltip: "พระบรมรูปรัชกาลที่ 5\n", popover: "พระบรมรูปรัชกาลที่ 5\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1180.3194888178914, y: 312.01277955271564 }, { id: "marker_6", attached: true, isLink: false, tooltip: "ศาลาจตุรมุข\n", popover: "ศาลาจตุรมุข\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1109.776357827476, y: 406.0702875399361 }, { id: "marker_7", attached: true, isLink: false, tooltip: "อาคาร 78 ปี\n", popover: "อาคาร 78 ปี\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1444.6006389776358, y: 632.0127795527156 }, { id: "marker_8", attached: true, isLink: false, tooltip: "อาคารสุรีย์ เหวียนระวี\n", popover: "อาคารสุรีย์ เหวียนระวี\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1351.5654952076677, y: 760.8306709265175 }, { id: "marker_9", attached: true, isLink: false, tooltip: "อาคารสมเด็จพระญาณสังวร\n", popover: "อาคารสมเด็จพระญาณสังวร\n", data: {}, src: "/mapsvg/markers/pin1_red.png", width: 15, height: 24, x: 1187.9872204472842, y: 912.1405750798722 }], responsive: true, onClick: null, mouseOver: null, mouseOut: null });
+        });
+    </script>
+</body>
+
+</html>
