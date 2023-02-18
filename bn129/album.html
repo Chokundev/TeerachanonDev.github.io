@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBUM</title>
+</head>
+<body>
+    <style>
+        body{
+  		background:#f0f0f0;
+		}
+		.gallery{
+			position:relative;
+			top:100px;
+			left:100px;
+		}
+		.gallery li{
+			position:absolute;
+			display:block;
+			margin:0;
+			list-style-type:none;
+			padding:10px 10px 30px 10px;
+			background:#fff;
+			border:solid black 1px;
+			-webkit-box-shadow:2px 2px 4px #333333;
+			-webkit-transition: -webkit-transform 0.5s ease;
+			-moz-box-shadow:2px 2px 4px #333333;
+			-moz-transition: -moz-transform 0.5s ease;
+			box-shadow:2px 2px 4px #333333;
+			transition: transform 0.5s ease;
+		}
+		.gallery li.active{
+			-webkit-transform:rotate(0deg) !important;
+			-moz-transform:rotate(0deg) !important;
+			transform:rotate(0deg) !important;
+		}
+		.gallery img{
+			display:block;
+			width:160px;
+			-webkit-transition: width 0.75s;
+			-moz-transition: width 0.75s;
+			transition: width 0.75s;
+		}
+		.gallery .active img{
+			display:block;
+			width:640px;
+		}
+    </style>
+
+
+    <ul class="gallery">
+        <li draggable="true"><img src="http://placeimg.com/640/480/any/1"/></li>
+        <li draggable="true"><img src="http://placeimg.com/640/480/any/2"/></li>
+        <li draggable="true"><img src="http://placeimg.com/640/480/any/3"/></li>
+        <li draggable="true"><img src="http://placeimg.com/640/480/any/4"/></li>
+        <li draggable="true"><img src="http://placeimg.com/640/480/any/5"/></li>
+      </ul>
+      <audio type="audio/mp3" preload="auto" src="Acoustic มาร์ชบวร.mp3" autoplay loop></audio>
+
+      <script>
+        
+        $(function(){
+              var zIndex= 1, endTop=0, endLeft=450;
+      
+              function randRotation(el){
+                  var rot = Math.round( Math.random() * 90-45);
+                  return $(el).css({
+                      '-webkit-transform':'rotate('+rot+'deg)'
+                      ,'-moz-transform':'rotate('+rot+'deg)'
+                      ,'transform':'rotate('+rot+'deg)'
+                  });
+              }
+      
+              $('.gallery li').each(function(){
+                  randRotation(this).css({
+                      top:Math.round(Math.random()*50-25)
+                      ,left:Math.round(Math.random()*50-25)
+                      ,'zIndex': zIndex++
+                  })
+                  .click(function(){
+                      var myZindex = $(this).css('zIndex');
+                      $('.gallery li').not(this).each(function(){
+                          if( $(this).css('zIndex') > myZindex ){
+                              $(this).css('zIndex',$(this).css('zIndex')-1);
+                          }
+                      });
+                      if(! $(this).is('.active')){
+                          $(this).toggleClass('active')
+                          .animate({
+                              top:endTop
+                              ,left:endLeft
+                          })
+                          .css({zIndex:$('.gallery li').length });
+                          var activated=$('.gallery .active').not(this);
+                          activated.length && activated.click();
+                      }else{
+                          $('.gallery li').each(function(){$(this).css('zIndex',parseInt($(this).css('zIndex'),10)+1)});
+                          randRotation($(this).toggleClass('active'))
+                          .animate({
+                              top:Math.round(Math.random()*50-25)
+                              ,left:Math.round(Math.random()*50-25)
+                          }).css({zIndex:1});
+                      }
+                  });
+              });
+          });
+          </script>
+</body>
+    
+</html>
