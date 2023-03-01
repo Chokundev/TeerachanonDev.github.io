@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=K2D'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@1,300&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: url("https://drive.google.com/uc?id=1qLkFdvHYQNGwNn131OPZejACQs3_HGnW") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .btn {
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        .wrapper {
+            background: #fff;
+            width: 350px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /** #### digital clock #### **/
+        .clock {
+            //width:100%;
+            background: #999;
+            font-size: 28px;
+            padding: 10px 50px 10px 50px;
+            /* font-family: Digital dream Fat; */
+            /* //text-shadow: 0 0 3px #eeFFee, 0 0 5px #00FF00;
+        color: 	cyan;
+        text-shadow: 1px 1px 2px teal, 0 0 25px green, 0 0 5px darkturquoise; */
+        }
+
+        /**
+      #### font digital: http://www.cufonfonts.com #### 
+      #### css @font-face generator : https://transfonter.org/ #### 
+      **/
+        @font-face {
+            font-family: 'Digital dream Fat';
+            src: url('https://semicon.github.io/fonts/DigitaldreamFat.woff2') format('woff2'),
+                url('https://semicon.github.io/fonts/DigitaldreamFat.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    <!--  ******* Time Tracker Script ***********  -->
+    <!--  ******* https://codewithcurt.com/create-employee-time-clock-web-app-on-google-sheets/ ***********  -->
+    <script>
+
+        $(document).ready(function () {
+            getData();
+        });
+
+        function getData() {
+            google.script.run.withSuccessHandler(function (ar) {
+                var userSelect = document.getElementById("user");
+                console.log(ar);
+
+                let option = document.createElement("option");
+                option.value = "";
+                option.text = "";
+                userSelect.appendChild(option);
+
+                ar.forEach(function (item, index) {
+                    let option = document.createElement("option");
+                    var user = item[0];
+                    option.value = item[0];
+                    option.text = item[0];
+                    userSelect.appendChild(option);
+                });
+            }).getData();
+
+        };
+
+        function ClockIn() {
+
+            $('#message').html("");
+            var user = document.getElementById("user").value;
+
+            if (user != '') {
+
+                google.script.run.withSuccessHandler(function (ar) {
+                    console.log(ar);
+                    ar.forEach(function (item, index) {
+
+                        if (item[0] == 'SUCCESS') {
+                            var message = item[2] + '<br> วันที่เข้าทำงาน ' + item[1];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-primary";
+                            clearText();
+                        } else {
+                            var message = item[2] + ' ' + item[0];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-warning";
+                            clearText();
+                        }
+
+                    });
+                }).clockIn(user);
+            }
+        }
+
+        function ClockOut() {
+
+            $('#message').html("");
+            var user = document.getElementById("user").value;
+
+            if (user != '') {
+
+                google.script.run.withSuccessHandler(function (ar) {
+                    console.log(ar);
+                    ar.forEach(function (item, index) {
+
+                        if (item[0] == 'SUCCESS') {
+                            var message = item[2] + '<br> วันที่ลงเวลากลับ ' + item[1];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-primary";
+                            clearText();
+                        } else {
+                            var message = item[2] + ' ' + item[0];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-warning";
+                            clearText();
+                        }
+
+                    });
+
+                }).clockOut(user);
+
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper text-center" style="min-width:350px">
+        <img src="https://drive.google.com/uc?id=1SVYEAObkRNw0A3ACx0HwFbqshcfKBlKp" width="45%">
+        <h1>ระบบลงเวลาทำงาน</h1>
+        <h6>ห้างหุ้นส่วนจำกัด เอ็นแอนด์ที การก่อสร้าง</h6><br />
+
+        <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+
+        <form class="mt-4">
+            <div class="row">
+                <div class="form-group col">
+                    <label for="user">เลือกชื่อ</label>
+                    <select class="form-control" id="user">
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <input type="button" value="ลงเวลามา" id="clockin" class="btn btn-primary" onclick="ClockIn()" />
+                    <input type="button" value="ลงเวลากลับ" id="clockout" class="btn btn-danger"
+                        onclick="ClockOut()" /><br><br>
+                    <button type="button" class="btn btn-info" onclick="noti()">ข้อตกลง!!</button>
+                    <div class="alert alert-primary" role="alert" id="message"></div>
+
+                </div>
+            </div>
+
+
+        </form>
+        <h6>© 2023 ธีรชานนท์ พวงเงิน</h6>
+    </div>
+
+    <!-- /* Digital clock Script ###- https://codepen.io/afarrar/pen/JRaEjP ### */ -->
+
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            //var session = "AM";
+
+            // if (h >= 12) {
+            //   h = h - 12;
+            //   session = "PM";
+            //   if (h == 0) {
+            //   h = 12;
+            //   }          
+            // }
+
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            //var time = h + ":" + m + ":" + s + " " + session;
+            var time = h + ":" + m + ":" + s
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+
+        } showTime();
+
+        var textMsg = document.getElementById('message').innerHTML;
+        if (textMsg == '') {
+            document.getElementById('message').innerHTML = 'ระบบลงเวลาทำงาน';
+            document.getElementById('message').className = 'alert alert-light';
+        }
+
+        function clearText() {
+            setTimeout(function () {
+                document.getElementById('user').value = '';
+                document.getElementById('message').innerHTML = 'ระบบลงเวลาทำงาน';
+                document.getElementById('message').className = 'alert alert-light';
+            }, 3000);
+
+        }
+
+        function noti() {
+            Swal.fire({
+
+                title: 'ข้อตกลง',
+                text: '------------',
+                confirmButtonText: 'รับทราบ',
+                footer: 'ประกาศเมื่อ : 26/02/66'
+            })
+        }
+
+
+    </script>
+
+</body>
+
+</html>
