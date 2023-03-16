@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet/scss" href="style.scss" type="text/css"> -->
+</head>
+
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;500&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        .container {
+            margin: auto;
+            max-width: 1200px;
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+
+        .img {
+            background-image: url(https://drive.google.com/uc?id=1A75HDijNo-U1cSrPXJw8tNXOP35j9wuv);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 40px 0 100px;
+            background-attachment: fixed;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            font-family: Sans-serif;
+            text-decoration: none;
+            margin-bottom: 70px;
+
+        }
+
+        .title1 {
+            color: #ff8001;
+            font-family: 'Noto Sans Thai', sans-serif;
+            letter-spacing: 2px;
+            font-size: 14px;
+
+
+        }
+
+        .title2 {
+            color: rgb(0, 0, 0);
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .introduce {
+            color: rgb(0, 0, 0);
+            font-family: 'Noto Sans Thai', sans-serif;
+            line-height: 1.5;
+            font-size: 17px;
+
+        }
+
+        .jotform-icon {
+            background-image: url("https://files.startupranking.com/startup/thumb/37832_dd0dcdb7463391d8ee4a9b7468e9f5aa930e359e_jotform_m.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 70px;
+        }
+
+        .button {
+            padding: 12px 17px;
+            border-radius: 5px;
+            border: 0;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-weight: bold;
+            background-color: white;
+            font-size: 100%;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        .title3 {
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 90px;
+        }
+
+        .icon1-img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 120px;
+            height: 120px;
+        }
+
+        .icon-description {
+            display: block;
+            text-align: center;
+            font-family: 'Noto Sans Thai', sans-serif;
+            color: #000000b3;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .icon-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .three-icon {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .icon-title {
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+
+        .page2 {
+            text-align: center;
+        }
+
+        .page3 {
+            background-color: #fbfbfb;
+
+        }
+
+        .page3-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .page3-img {
+            max-width: 540px;
+            width: 100%;
+
+        }
+
+        .information {
+            flex: 1;
+            padding-left: 70px;
+        }
+
+        button.learn-more {
+            background-color: #292b2c;
+            color: white;
+        }
+
+        .info-title {
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+
+        .info-all {
+            color: #000000b3;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            font-size: 17px;
+
+        }
+
+        .get-free {
+            background-color: #292b2c;
+            color: white;
+        }
+
+        .memberships {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .member {
+            flex: auto;
+            padding: 60px;
+            text-align: center;
+            font-family: 'Noto Sans Thai', sans-serif;
+            border-radius: 4px;
+        }
+
+        span {
+            font-size: 40px;
+
+        }
+
+        .mem-title {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .orange {
+            background-color: #ff8001;
+            color: white;
+        }
+
+        .page4 {
+            padding: 80px 0;
+        }
+
+        .under {
+            background-color: #f5f5f5;
+            padding: 10px;
+            display: flex;
+
+
+        }
+
+        .under .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .copy {
+            font-family: 'Work Sans', sans-serif;
+
+
+        }
+
+        .facebook {
+            background-image: url("https://i.ibb.co/x6n6DNV/facebook-logo-button.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+
+        }
+
+        .sos-med {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+
+
+        .twitter {
+            background-image: url("https://i.ibb.co/wzstzsd/twitter.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+        }
+
+        .linkedin {
+            background-image: url("https://i.ibb.co/9T8kqqb/linkedin-logo-button.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+        }
+
+        @media (max-width: 840px) {
+            .information {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .page3-box {
+                justify-content: center;
+            }
+        }
+
+
+        /* Style all font awesome icons */
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        /* Set a specific color for each brand */
+
+        /* Facebook */
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        /* Twitter */
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .social {
+            width: 30%;
+        }
+    </style>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap" rel="stylesheet">
+    <div class="img">
+
+        <div class="container">
+            <div class="header">
+
+
+            </div>
+            <div class="start">
+
+                <h1 class="title2">BN-Student Commission</h1>
+                <h3 class="introduce"> คณะกรรมการนักเรียน โรงเรียนวัดบวรนิเวศ
+                    <br>
+                    ปีการศึกษา 2566
+                </h3>
+
+            </div>
+        </div>
+    </div>
+    <div class="page2">
+        <div class="container">
+            <marquee style="padding-top: 30px; padding-bottom:30px ;">
+                ยินดีต้อนรับสู่เว็บไซต์ทางการของคณะกรรมการนักเรียน โรงเรียนวัดบวรนิเวศ</marquee>
+
+
+            <div class="d-grid gap-2" style="padding-bottom: 30px;">
+                <button class="btn btn-info" type="button" style="padding-top: 15px; padding-bottom: 15px;"
+                    disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg> ข่าวประชาสัมพันธ์</button>
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://drive.google.com/uc?id=1OoqbUnMuhtljmwTe23F4Q7EO-779oulA"
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">แนะนำโรงเรียนวัดบวรนิเวศ</h5>
+                                <p class="card-text">คลิปวิดีโอแนะนำโรงเรียนวัดบวรนิเวศ</p>
+                                <p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://drive.google.com/uc?id=10NWcdMEw0iimCWD14r-liARr539Rg6TQ"
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">น้องส่งพี่ บ.น. 129</h5>
+                                <p class="card-text">ประมวลภาพกิจกรรม "น้องส่งพี่ บ.น. 129"</p>
+                                <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://drive.google.com/uc?id=1ppzJvJEOfCnlz24eBAbv-UjCBvciF4g8"
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">130 ปี บวรนิเวศ</h5>
+                                <p class="card-text">ประมวลภาพกิจกรรม "130 ปี บวรนิเวศ"</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="card mb-3">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div><div class="card mb-3">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div> -->
+            </div>
+
+            <!-- <div class="alert alert-primary" role="alert">
+                ข่าวส่ารต่างๆ
+              </div> -->
+            <h3>บริการต่างๆ และข่าวสารจากโรงเรียน</h3>
+            <div class="d-grid gap-2" style="padding-bottom: 30px;">
+                <button class="btn btn-info" type="button" onclick="btn1()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg> ตรวจสอบผลการเรียน</button>
+
+                <button class="btn btn-warning" type="button" onclick="btn2()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                    </svg> ประกาศคะแนนความประพฤติ ต่ำกว่า 60 คะแนน</button>
+
+                <button class="btn btn-primary" type="button" onclick="btn3()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg> บริการบัญชี @bn.ac.th</button> <br />
+
+
+
+                <button class="btn btn-success" type="button" onclick="btn4()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                        <path fill-rule="evenodd"
+                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                    </svg> LOGIN WIFI โรงเรียน</button>
+
+                <button class="btn btn-danger" type="button" onclick="btn5()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                        <path fill-rule="evenodd"
+                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                    </svg> LOGOUT WIFI โรงเรียน</button>
+
+
+
+                <!-- <button class="btn btn-danger" type="button" onclick="error()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                    </svg> ทดสอบระบบ</button> -->
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+        <h3 style="padding-top: 25px;">ติดตามพวกเราได้ที่!!</h3>
+        <a href="https://www.facebook.com/bncommission"><img
+                src="https://drive.google.com/uc?id=128JuNY3THe1HijuXrF35IL7IfYojdb5G" class="social" /></a>
+        <a href="https://www.instagram.com/bowonniwet_the_next_gen/"><img
+                src="https://drive.google.com/uc?id=1lHDfDYrdPW_su_pzqlJexq7nWj1OGBsV" class="social" /></a>
+        <a href="https://bn.ac.th"><img src="https://drive.google.com/uc?id=1KLYeZADh8E1QJxREGrjTfoSQuQidHnuY"
+                class="social" /></a>
+
+
+    </div>
+    <footer
+        style="text-align: center; font-size: 9px; background-color: black; color:white; padding-top: 20px; padding-bottom: 20px;">
+        ติดต่อ : admin@bn-sc.cloud หรือ studentcomission@bn.ac.th<br />
+        พัฒนาเว็บไซต์โดย : ธีรชานนท์ พวงเงิน<br />
+        หัวหน้างานโสตทัศนศึกษาและงานประชาสัมพันธ์ คณะกรรมการนักเรียน<br />
+        2023 © BN'SC คณะกรรมการนักเรียนโรงเรียนวัดบวรนิเวศ
+    </footer>
+
+
+    <script>
+        function btn1() {
+            window.open("http://authen.bn.ac.th:8086/mis/", "_blank");
+
+        }
+
+        function btn2() {
+            window.location.assign("https://bn.ac.th/home/wp-content/uploads/2023/03/2566-03-03_report_behavior_lower60.pdf")
+        }
+
+        function btn3() {
+            window.open("https://id.bn.ac.th/", "_blank");
+
+        }
+
+        function btn4() {
+            window.open("http://login.bn.ac.th", "_blank");
+
+        }
+
+        function btn5() {
+            window.open("http://login.bn.ac.th/logout", "_blank");
+
+        }
+
+        function error() {
+            Swal.fire({
+                icon: 'warning',
+                title: 'ERROR',
+                text: 'อยู่ระหว่างการทดสอบระบบ',
+                // footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
