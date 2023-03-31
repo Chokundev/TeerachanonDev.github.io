@@ -203,7 +203,7 @@ body {
     top: 50%;
     left: 0;
     width: 100%;
-    margin-top: 170px;
+    margin-top: 200px;
     transform: translateY(-50%);
     z-index: 20;
 }
