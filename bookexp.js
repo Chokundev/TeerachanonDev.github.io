@@ -17,8 +17,8 @@ function calculate(){
 
     var result2 = (result1 *1) * (power *1);
 
-    document.getElementById("result1").innerHTML = result1 + "   ทักษะ";
-    document.getElementById("result2").innerHTML = "บารมีที่ได้  :  " + result2;
+    document.getElementById("result1").innerHTML = "ค่าทักษะที่ได้ : " + result1;
+    document.getElementById("result2").innerHTML = "ค่าบารมีที่ได้  :  " + result2;
 
     Swal.fire({
         

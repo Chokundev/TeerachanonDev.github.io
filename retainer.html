@@ -27,7 +27,7 @@
 </head>
 
 
-<body class="hero-anime">
+<body class="hero-anime" onload="error()">
 
 	<div class="navigation-wrap bg-light start-header start-style">
 		<div class="container">
@@ -51,7 +51,7 @@
 									<a class="nav-link" href="index.html">หน้าหลัก</a>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="retainer1.html">คำนวณเลเวลทหาร</a>
+									<a class="nav-link" href="retainer.html">คำนวณเลเวลทหาร</a>
 								</li>
 
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -79,116 +79,13 @@
 		<div class="absolute-center">
 			<div class="section">
 
-				<div class="container" id="page" style="display: block; margin-top: 10px;">
+				<div class="container" id="page" style="display: block;">
 
 
 
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">ค่ายุทธ</span>
-						</div>
-						<input type="number" class="form-control" placeholder="ค่าทักษะ" id="str-apt">
-
-					</div>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">%วงแสง /%โฉมงาม</span>
-						</div>
-
-						<input type="number" class="form-control" placeholder="% วงแสง / %โฉมงาม" id="str-per"
-							value="100">
-						<span class="input-group-text">%</span>
-					</div><br>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">ค่าปัญญา</span>
-						</div>
-						<input type="number" class="form-control" placeholder="ค่าทักษะ" id="int-apt">
-
-					</div>
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">%วงแสง /%โฉมงาม</span>
-						</div>
-
-						<input type="number" class="form-control" placeholder="% วงแสง / %โฉมงาม" id="int-per"
-							value="100">
-						<span class="input-group-text">%</span>
-					</div><br>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">ค่าปกครอง</span>
-						</div>
-						<input type="number" class="form-control" placeholder="ค่าทักษะ" id="pol-apt">
-
-					</div>
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">%วงแสง /%โฉมงาม</span>
-						</div>
-
-						<input type="number" class="form-control" placeholder="% วงแสง / %โฉมงาม" id="pol-per"
-							value="100">
-						<span class="input-group-text">%</span>
-					</div><br>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">ค่าเสน่ห์</span>
-						</div>
-						<input type="number" class="form-control" placeholder="ค่าทักษะ" id="char-apt">
-
-					</div>
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">%วงแสง /%โฉมงาม</span>
-						</div>
-
-						<input type="number" class="form-control" placeholder="% วงแสง / %โฉมงาม" id="char-per"
-							value="100">
-						<span class="input-group-text">%</span>
-					</div><br>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">ธุรกิจครอบครัว</span>
-						</div>
-						<input type="number" class="form-control" placeholder="จวน" id="fa1">
-						<input type="number" class="form-control" placeholder="ภริยา" id="fa2">
-						<input type="number" class="form-control" placeholder="รถม้า" id="fa3">
-						<span class="input-group-text">%</span>
-					</div>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">เซี่ยวจวง</span>
-						</div>
-						<input type="number" class="form-control" placeholder="% เซี่ยวจวง" id="xiao">
-						<span class="input-group-text">%</span>
-
-					</div> <br>
-
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="">เลเวลทหาร</span>
-						</div>
-						<input type="number" class="form-control" placeholder="เลเวลปัจจุบันของทหาร" id="level">
-
-					</div> <br>
-					<center><button type="button" class="btn btn-primary" onclick="calculate()">👆 คำนวณ</button></center>
-
-					<hr>
-
-					<div style="margin-bottom: 20px;">
-						<h3 style="text-align: center;">ผลลัพธ์ที่ได้</h3>
-
-					<button type="button" class="btn btn-warning btn-lg btn-block" id="result" disabled>ค่าบารมีต่อการอัพ 1 เลเวล : </button>
-
-                    <button type="button" class="btn btn-warning btn-lg btn-block" id="s_result" disabled>ค่าบารมีที่ได้จากการอัพดาว 1 ทักษะ : </button>
-					</div>
+					<div class="alert alert-danger" role="alert">
+						<h4 style="text-align: center;" class="blink">⚠️ฟังก์ชั่นนี้อยู่ระหว่างการพัฒนา⚠️</h1>
+					  </div>
 					
 
                     

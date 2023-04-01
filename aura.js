@@ -80,13 +80,13 @@ function calculate() {
     }
     console.log(c1);
 
-    document.getElementById("result").innerHTML = 'บารมีรวม : ' + p_sum;
+    document.getElementById("result").innerHTML = 'ค่าบารมีรวมที่ได้ : ' + p_sum;
 
 
-    document.getElementById("s_result").innerHTML = 'ยุทธ : ' + s1;
-    document.getElementById("i_result").innerHTML = 'ปัญญา : ' + i1;
-    document.getElementById("p_result").innerHTML = 'ปกครอง : ' + p1;
-    document.getElementById("c_result").innerHTML = 'สเน่ห์ : ' + c1;
+    document.getElementById("s_result").innerHTML = 'ค่ายุทธที่ได้ : ' + s1;
+    document.getElementById("i_result").innerHTML = 'ค่าปัญญาที่ได้ : ' + i1;
+    document.getElementById("p_result").innerHTML = 'ค่าปกครองที่ได้ : ' + p1;
+    document.getElementById("c_result").innerHTML = 'ค่าเสน่ห์ที่ได้ : ' + c1;
 
     Swal.fire({
 

@@ -51,7 +51,7 @@
                                     <a class="nav-link" href="index.html">หน้าหลัก</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="retainer1.html">คำนวณเลเวลทหาร</a>
+                                    <a class="nav-link" href="retainer.html">คำนวณเลเวลทหาร</a>
                                 </li>
 
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -151,49 +151,24 @@
                     </div>
 
                     <div>
-                        <center><button type="button" class="btn btn-primary" onclick="calculate()">คำนวณ</button></center>
+                        <center><button type="button" class="btn btn-primary" onclick="calculate()">👆 คำนวณ</button></center>
                         
 
                     </div><br>
                     <br>
                     <hr>
                     <h3 style="text-align: center;">ผลลัพธ์ที่ได้</h3>
-                    <div class="alert alert-primary" role="alert">
-                        <div id="result">
-                            ค่าบารมีที่ได้ :
-                        </div>
+                    
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="result" disabled>ค่าบารมีที่ได้ : </button>
 
-                        <div id="s_result">
-                            ค่ายุทธที่ได้ :
-                        </div>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="s_result" disabled>ค่ายุทธที่ได้ : </button>
 
-                        <div id="i_result">
-                            ค่าปัญญาที่ได้ :
-                        </div>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="i_result" disabled>ค่าปัญญาที่ได้ : </button>
 
-                        <div id="p_result">
-                            ค่าปกครองที่ได้ :
-                        </div>
-
-                        <div id="c_result">
-                            ค่าสเน่ห์ที่ได้ :
-                        </div>
-                      </div>
-                    <!-- <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-warning" type="button" id="result" disabled>ค่าบารมีที่ได้</button>
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-info" type="button" id="s_result" disabled>ค่ายุทธที่ได้</button>
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-info" type="button" id="i_result" disabled>ค่าปัญญาที่ได้</button>
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-info" type="button" id="p_result" disabled>ค่าปกครองที่ได้</button>
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-info" type="button" id="c_result" disabled>ค่าสเน่ห์ที่ได้</button>
-                    </div> -->
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="c_result" disabled>ค่าเสน่ห์ที่ได้ : </button>
+                    
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="p_result" disabled>ค่าปกครองที่ได้ : </button>
+                    
 
 
 

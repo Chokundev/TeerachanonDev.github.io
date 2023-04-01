@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 @import url('https://fonts.googleapis.com/css2?family=Athiti&display=swap');
+
 /* #Primary
 ================================================== */
-*{
+* {
     font-family: 'Athiti', sans-serif;
 }
+
 body {
     font-family: 'Athiti', sans-serif;
     font-size: 16px;
@@ -68,8 +70,8 @@ body {
 
 .navbar {
     padding: 0px;
-    
-    
+
+
 }
 
 .navbar-brand img {
@@ -635,31 +637,52 @@ body.dark .logo img {
 
 
 .hidden {
-    opacity:0;
-  }
-  .console-container {
-   
-    font-family:Khula;
-    font-size:4em;
-    text-align:center;
-    height:200px;
-    width:600px;
-    display:block;
-    position:absolute;
-    color:white;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-  }
-  .console-underscore {
-     display:inline-block;
-    position:relative;
-    top:-0.14em;
-    left:10px;
-  }
+    opacity: 0;
+}
 
-  .blink {
-    animation: blink-animation 0.9s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;}
+.console-container {
+
+    font-family: Khula;
+    font-size: 4em;
+    text-align: center;
+    height: 200px;
+    width: 600px;
+    display: block;
+    position: absolute;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+}
+
+/* Blink for Webkit and others
+(Chrome, Safari, Firefox, IE, ...)
+*/
+
+@-webkit-keyframes blinker {
+    from {
+        opacity: 1.0;
+    }
+
+    to {
+        opacity: 0.0;
+    }
+}
+
+.blink {
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
