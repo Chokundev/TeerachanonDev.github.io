@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js" integrity="sha512-t89+ZHqiI+cJO2EZ1zy846TMzc7K0VH22insNeb32hMoVymAMd0aYeLzmNF4WuRLDUXPVo6dzbZ1zI7MBWlqlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -35,7 +35,7 @@
                       <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                    </svg>
                 </button>
-                <a href="#" class="text-xl font-bold flex items-center lg:ml-2.5">
+                <a href="#" class="text-xl font-bold flex items-center lg:ml-2.5 text-decoration-none">
                 <img src="//webcdn.bethekingth.com/thailand/images/index/logo-f6d7ac7569.png" class="h-6 mr-2" alt="Windster Logo">
                 <div class="head"><span class="self-center whitespace-nowrap">ระบบคำนวณเกมเรียกข้าว่าท่านอ๋อง</span></div>
                 
@@ -79,23 +79,31 @@
     </nav>
 
     <div class="flex overflow-hidden bg-white pt-16">
-       <aside id="sidebar" class="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75" aria-label="Sidebar">
-          <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
-             <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-                <div class="flex-1 px-3 bg-white divide-y space-y-1">
-                   <ul class="space-y-2 pb-2">
+      <aside id="sidebar"
+      class="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+      aria-label="Sidebar">
+      <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+          <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+              <div class="flex-1 px-3 bg-white divide-y space-y-1">
+                  <ul class="space-y-2 pb-2">
                       <li>
-                         <form action="#" method="GET" class="lg:hidden">
-                            <label for="mobile-search" class="sr-only">Search</label>
-                            <div class="relative">
-                               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                  <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-                                  </svg>
-                               </div>
-                               <input type="text" name="email" id="mobile-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5" placeholder="Search">
-                            </div>
-                         </form>
+                          <form action="#" method="GET" class="lg:hidden">
+                              <label for="mobile-search" class="sr-only">Search</label>
+                              <div class="relative">
+                                  <div
+                                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <svg class="w-5 h-5 text-gray-500" fill="currentColor"
+                                          viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                          </path>
+                                      </svg>
+                                  </div>
+                                  <input type="text" name="email" id="mobile-search"
+                                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                                      placeholder="Search">
+                              </div>
+                          </form>
                       </li>
 
 
@@ -103,133 +111,124 @@
 
                       <li>
 
-                        <a href="index.html" class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">
-                           <!-- <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                           </svg> -->
-                           <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/slduhdil.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                           <span class="ml-3">หน้าหลัก</span>
-                        </a>
+                          <a href="index.html"
+                              class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group text-decoration-none">
+                              <!-- <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                 </svg> -->
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/slduhdil.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3">หน้าหลัก</span>
+                          </a>
 
-                     </li>
+                      </li>
                       <li>
 
-                         <a href="bookexp.html" class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/hpmjntem.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                            <span class="ml-3">คำนวณ EXPตำรา</span>
-                         </a>
+                          <a href="bookexp.html"
+                              class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3">คำนวณ EXPตำรา</span>
+                          </a>
 
                       </li>
 
                       <li>
-                         <a href="fruit.html"  class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/hpmjntem.json"
-                                    trigger="hover"
-                                    style="width:32px;height:32px">
-                                </lord-icon>
-                            <span class="ml-3 flex-1 whitespace-nowrap">คำนวณผลไม้และยา</span>
-                            <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
-                         </a>
+                          <a href="fruit.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณผลไม้และยา</span>
+                              <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
+                          </a>
                       </li>
                       <li>
-                         <a href="aura.html"  class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/hpmjntem.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                            <span class="ml-3 flex-1 whitespace-nowrap">คำนวณวงแสง</span>
-                            <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
-                         </a>
+                          <a href="aura.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณวงแสง</span>
+                              <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
+                          </a>
                       </li>
                       <li>
-                         <a href="retainer.html" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/hpmjntem.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                            <span class="ml-3 flex-1 whitespace-nowrap">คำนวณเลเวลทหาร</span>
-                         </a>
+                          <a href="retainer.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณเลเวลทหาร</span>
+                          </a>
                       </li>
                       <li>
-                         <a href="heart.html" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/hpmjntem.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                            <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าสนิท</span>
-                         </a>
+                          <a href="heart.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าสนิท</span>
+                          </a>
                       </li>
                       <li>
-                         <a href="charm.html" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
-                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/hpmjntem.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                            <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าเสน่ห์</span>
-                         </a>
+                          <a href="charm.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าเสน่ห์</span>
+                          </a>
                       </li>
-                      
-                   </ul>
+
+                  </ul>
 
 
 
-                   <div class="space-y-2 pt-2">
-                      
-                      <a href="doc.html"  class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2">
-                         <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
-                         </svg> -->
+                  <div class="space-y-2 pt-2">
 
-                         <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/frjgvxce.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                         <span class="ml-3">คู่มือการใช้งาน</span>
+                      <a href="doc.html"
+                          class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2 text-decoration-none">
+                          <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+               </svg> -->
+
+                          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                          <lord-icon src="https://cdn.lordicon.com/frjgvxce.json" trigger="hover"
+                              style="width:32px;height:32px">
+                          </lord-icon>
+                          <span class="ml-3">คู่มือการใช้งาน</span>
                       </a>
-                      
-                      <a href="about.html"  class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2">
-                        <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                           <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
-                        </svg> -->
-                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/dycatgju.json"
-    trigger="hover"
-    style="width:32px;height:32px">
-</lord-icon>
-                        <span class="ml-3">เกี่ยวกับระบบ</span>
-                     </a>
-                      
-                   </div>
-                </div>
-             </div>
+
+                      <a href="about.html"
+                          class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2 text-decoration-none">
+                          <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                 <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+              </svg> -->
+                          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                          <lord-icon src="https://cdn.lordicon.com/dycatgju.json" trigger="hover"
+                              style="width:32px;height:32px">
+                          </lord-icon>
+                          <span class="ml-3">เกี่ยวกับระบบ</span>
+                      </a>
+
+                  </div>
+              </div>
           </div>
-       </aside>
+      </div>
+  </aside>
        <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
 
 
@@ -382,14 +381,14 @@
           
           <footer class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
              <ul class="flex items-center flex-wrap mb-6 md:mb-0">
-                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">ติดต่อ</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6 text-decoration-none">ติดต่อ</a></li>
                 
-                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline">ข้อตกลงการใช้งาน</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline text-decoration-none">ข้อตกลงการใช้งาน</a></li>
              </ul>
              
           </footer>
           <p class="text-center text-sm text-gray-500 my-10">
-             &copy; 2022-2023 <a href="#" class="hover:underline" target="_blank">   「U」๏มารHilo88 z1sv34</a>. All rights reserved.
+             &copy; 2022-2023 <a href="#" class="text-decoration-none" target="_blank">   「U」๏มารHilo88 z1sv34</a>. All rights reserved.
           </p>
        </div>
     </div>

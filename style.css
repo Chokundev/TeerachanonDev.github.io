@@ -2,8 +2,13 @@
 
 * {
     font-family: 'Noto Sans Thai', sans-serif;
+    
 }
 
 .head {
     font-size: 14px;
+}
+
+a {
+    text-decoration: none;
 }
