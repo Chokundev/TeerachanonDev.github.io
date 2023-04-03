@@ -9,6 +9,12 @@
    <title>Signup page</title>
 </head>
 <body>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+      * {
+         font-family: 'Noto Sans Thai', sans-serif;
+      }
+   </style>
    <div class="formContainer">
       <form method="post" action="signup_action.php">
          <h2 class="title">Sign up</h2>
