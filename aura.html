@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณ วงแสง</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js" integrity="sha512-t89+ZHqiI+cJO2EZ1zy846TMzc7K0VH22insNeb32hMoVymAMd0aYeLzmNF4WuRLDUXPVo6dzbZ1zI7MBWlqlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+</head>
+<body>
+    <!-- component -->
+<!-- This is an example component -->
+<div>
+    <nav class="bg-white border-b border-gray-200 fixed z-30 w-full">
+       <div class="px-3 py-3 lg:px-5 lg:pl-3">
+          <div class="flex items-center justify-between">
+             <div class="flex items-center justify-start">
+                <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar" class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded">
+                   <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                   </svg>
+                   <svg id="toggleSidebarMobileClose" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                   </svg>
+                </button>
+                <a href="#" class="text-xl font-bold flex items-center lg:ml-2.5 text-decoration-none">
+                <img src="//webcdn.bethekingth.com/thailand/images/index/logo-f6d7ac7569.png" class="h-6 mr-2" alt="Windster Logo">
+                <div class="head"><span class="self-center whitespace-nowrap">ระบบคำนวณเกมเรียกข้าว่าท่านอ๋อง</span></div>
+                </a>
+                <form action="#" method="GET" class="hidden lg:block lg:pl-32">
+                   <label for="topbar-search" class="sr-only"></label>
+                   <div class="mt-1 relative lg:w-64">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                         <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                         </svg>
+                      </div>
+                      <input type="text" name="email" id="topbar-search" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5" placeholder="Search">
+                   </div>
+                </form>
+             </div>
+
+             <div class="flex items-center">
+                <button id="toggleSidebarMobileSearch" type="button" class="lg:hidden text-gray-500 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg">
+                   <span class="sr-only">Search</span>
+                   <!-- <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                   </svg> -->
+                </button>
+                <!-- <div class="hidden lg:flex items-center">
+                   <span class="text-base font-normal text-gray-500 mr-5">Open source ❤️</span>
+                   <div class="-mb-1">
+                      <a class="github-button" href="#" data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themesberg/windster-tailwind-css-dashboard on GitHub">Star</a>
+                   </div>
+                </div>
+                <a href="#" class="hidden sm:inline-flex ml-5 text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">
+                   <svg class="svg-inline--fa fa-gem -ml-1 mr-2 h-4 w-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gem" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
+                   </svg>
+                   Upgrade to Pro
+                </a> -->
+             </div>
+
+          </div>
+       </div>
+    </nav>
+
+    <div class="flex overflow-hidden bg-white pt-16">
+      <aside id="sidebar"
+      class="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+      aria-label="Sidebar">
+      <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+          <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+              <div class="flex-1 px-3 bg-white divide-y space-y-1">
+                  <ul class="space-y-2 pb-2">
+                      <li>
+                          <form action="#" method="GET" class="lg:hidden">
+                              <label for="mobile-search" class="sr-only">Search</label>
+                              <div class="relative">
+                                  <div
+                                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <svg class="w-5 h-5 text-gray-500" fill="currentColor"
+                                          viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                          </path>
+                                      </svg>
+                                  </div>
+                                  <input type="text" name="email" id="mobile-search"
+                                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                                      placeholder="Search">
+                              </div>
+                          </form>
+                      </li>
+
+
+
+
+                      <li>
+
+                          <a href="index.html"
+                              class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group text-decoration-none">
+                              <!-- <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                 </svg> -->
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/slduhdil.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3">หน้าหลัก</span>
+                          </a>
+
+                      </li>
+                      <li>
+
+                          <a href="bookexp.html"
+                              class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3">คำนวณ EXPตำรา</span>
+                          </a>
+
+                      </li>
+
+                      <li>
+                          <a href="fruit.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณผลไม้และยา</span>
+                              <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
+                          </a>
+                      </li>
+                      <li>
+                          <a href="aura.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณวงแสง</span>
+                              <!-- <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span> -->
+                          </a>
+                      </li>
+                      <li>
+                          <a href="retainer.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณเลเวลทหาร</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="heart.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าสนิท</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="charm.html"
+                              class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group text-decoration-none">
+                              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                              <lord-icon src="https://cdn.lordicon.com/hpmjntem.json" trigger="hover"
+                                  style="width:32px;height:32px">
+                              </lord-icon>
+                              <span class="ml-3 flex-1 whitespace-nowrap">คำนวณค่าเสน่ห์</span>
+                          </a>
+                      </li>
+
+                  </ul>
+
+
+
+                  <div class="space-y-2 pt-2">
+
+                      <a href="doc.html"
+                          class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2 text-decoration-none">
+                          <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+               </svg> -->
+
+                          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                          <lord-icon src="https://cdn.lordicon.com/frjgvxce.json" trigger="hover"
+                              style="width:32px;height:32px">
+                          </lord-icon>
+                          <span class="ml-3">คู่มือการใช้งาน</span>
+                      </a>
+
+                      <a href="about.html"
+                          class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2 text-decoration-none">
+                          <!-- <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                 <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+              </svg> -->
+                          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                          <lord-icon src="https://cdn.lordicon.com/dycatgju.json" trigger="hover"
+                              style="width:32px;height:32px">
+                          </lord-icon>
+                          <span class="ml-3">เกี่ยวกับระบบ</span>
+                      </a>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </aside>
+       <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+
+
+
+
+
+       <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+          <main>
+             <div class="pt-6 px-4">
+                <div class="w-full grid grid-cols-1 xl:grid-cols-1 2xl:grid-cols-1 gap-4">
+                   <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8  2xl:col-span-2">
+                      <div class="flex items-center justify-between mb-4">
+                         <div class="flex-shrink-0">
+                           <h3 class="text-xl font-bold leading-none text-gray-900">ระบบคำนวณ วงแสง</h3>
+                            
+                         </div>
+                         
+                      </div>
+                      <div>
+
+                        <h6><strong>ค่าคุณสมบัติ</strong>  </h6>
+                    <div class="input-group">
+                        <span class="input-group-text">ค่ายุทธ</span>
+                        <input type="number" aria-label="First name" class="form-control" id="str-apt"
+                            placeholder="บัฟทักษะ">
+                        <input type="number" aria-label="Last name" class="form-control" id="str-atb"
+                            placeholder="บัฟยา">
+                    </div> <br>
+
+                    <div class="input-group">
+                        <span class="input-group-text">ค่าปัญญา</span>
+                        <input type="number" aria-label="First name" class="form-control" id="int-apt"
+                            placeholder="บัฟทักษะ">
+                        <input type="number" aria-label="Last name" class="form-control" id="int-atb"
+                            placeholder="บัฟยา">
+                    </div> <br>
+
+                    <div class="input-group">
+                        <span class="input-group-text">ค่าปกครอง</span>
+                        <input type="number" aria-label="First name" class="form-control" id="pol-apt"
+                            placeholder="บัฟทักษะ">
+                        <input type="number" aria-label="Last name" class="form-control" id="pol-atb"
+                            placeholder="บัฟยา">
+                    </div> <br>
+
+                    <div class="input-group">
+                        <span class="input-group-text">ค่าสเน่ห์</span>
+                        <input type="number" aria-label="First name" class="form-control" id="char-apt"
+                            placeholder="บัฟทักษะ">
+                        <input type="number" aria-label="Last name" class="form-control" id="char-atb"
+                            placeholder="บัฟยา">
+                    </div>
+                    <hr>
+
+
+                    <h6><strong>จำนวน % วงแสงที่อัพ</strong> </h6>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">ค่ายุทธ</span>
+                        <input type="number" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="str-per">
+                        <span class="input-group-text">%</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">ค่าปัญญา</span>
+                        <input type="number" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="int-per">
+                        <span class="input-group-text">%</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">ค่าปกครอง</span>
+                        <input type="number" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="pol-per">
+                        <span class="input-group-text">%</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">ค่าสเน่ห์</span>
+                        <input type="number" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="char-per">
+                        <span class="input-group-text">%</span>
+
+
+                    </div>
+
+                    <div>
+                        <center><button type="button" class="btn btn-primary" onclick="calculate()">👆 คำนวณ</button></center>
+                        
+
+                    </div>
+
+
+
+                      </div>
+                   </div>
+                   
+                </div>
+
+                
+                <div class="grid grid-cols-1 2xl:grid-cols-1 xl:gap-4 my-4">
+                   <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+                      <div class="flex items-center justify-between mb-4">
+                         <h3 class="text-xl font-bold leading-none text-gray-900">ผลลัพธ์</h3>
+                         <!-- <a href="#" class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2">
+                         View all
+                         </a> -->
+                      </div>
+                      <div class="flow-root">
+                         <ul role="list" class="divide-y divide-gray-200">
+
+                            <li class="py-3 sm:py-4">
+                               <div class="flex items-center space-x-4">
+                                  
+                                  <div class="flex-1 min-w-0">
+                                     <p class="text-sm font-medium text-gray-900 truncate">
+                                        ค่าบารมีทั้งหมดที่เพิ่มขึ้น
+                                     </p>
+                                     
+                                  </div>
+                                  <div class="inline-flex items-center text-base font-semibold text-gray-900" id="result">
+                                     xxxx
+                                  </div>
+                               </div>
+                            </li>
+
+                            <li class="py-3 sm:py-4">
+                              <div class="flex items-center space-x-4">
+                                 
+                                 <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                       ค่ายุทธที่เพิ่มขึ้น
+                                    </p>
+                                    
+                                 </div>
+                                 <div class="inline-flex items-center text-base font-semibold text-gray-900" id="s_result">
+                                    xxxx
+                                 </div>
+                              </div>
+                           </li>
+
+                           <li class="py-3 sm:py-4">
+                            <div class="flex items-center space-x-4">
+                               
+                               <div class="flex-1 min-w-0">
+                                  <p class="text-sm font-medium text-gray-900 truncate">
+                                     ค่าปัญญาที่เพิ่มขึ้น
+                                  </p>
+                                  
+                               </div>
+                               <div class="inline-flex items-center text-base font-semibold text-gray-900" id="i_result">
+                                  xxxx
+                               </div>
+                            </div>
+                         </li>
+
+                         <li class="py-3 sm:py-4">
+                            <div class="flex items-center space-x-4">
+                               
+                               <div class="flex-1 min-w-0">
+                                  <p class="text-sm font-medium text-gray-900 truncate">
+                                     ค่าปกครองที่เพิ่มขึ้น
+                                  </p>
+                                  
+                               </div>
+                               <div class="inline-flex items-center text-base font-semibold text-gray-900" id="p_result">
+                                  xxxx
+                               </div>
+                            </div>
+                         </li>
+
+                         <li class="py-3 sm:py-4">
+                            <div class="flex items-center space-x-4">
+                               
+                               <div class="flex-1 min-w-0">
+                                  <p class="text-sm font-medium text-gray-900 truncate">
+                                     ค่าเสน่ห์ที่เพิ่มขึ้น
+                                  </p>
+                                  
+                               </div>
+                               <div class="inline-flex items-center text-base font-semibold text-gray-900" id="c_result">
+                                  xxxx
+                               </div>
+                            </div>
+                         </li>
+
+                           
+
+                           
+
+                           
+
+                            
+                            
+                            
+                            
+                         </ul>
+                      </div>
+                   </div>
+                   
+
+                </div>
+             </div>
+          </main>
+
+
+
+
+
+          
+          <footer class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+             <ul class="flex items-center flex-wrap mb-6 md:mb-0">
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">ติดต่อ</a></li>
+                
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline">ข้อตกลงการใช้งาน</a></li>
+             </ul>
+             
+          </footer>
+          <p class="text-center text-sm text-gray-500 my-10">
+             &copy; 2022-2023 <a href="#" class="hover:underline text-decoration-none" target="_blank">   「U」๏มารHilo88 z1sv34</a>. All rights reserved.
+          </p>
+       </div>
+    </div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+ </div>
+
+ <script src="js/aura.js"></script>
+</body>
+</html>

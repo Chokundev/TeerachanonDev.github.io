@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300&display=swap');
 * {
-    font-family: 'Noto Sans Thai', sans-serif;
-    
+    /* font-family: 'Noto Sans Thai', sans-serif; */
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
 .head {

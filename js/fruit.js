@@ -148,11 +148,11 @@ function calculate() {
     }
     console.log(c_sum);
 
-    document.getElementById("result").innerHTML = 'ค่าบารมีรวมที่ได้ : ' + r_sum;
-    document.getElementById("s_result").innerHTML = 'ค่ายุทธที่ได้ : ' + s_sum;
-    document.getElementById("i_result").innerHTML = 'ค่าปัญญาที่ได้ : ' + i_sum;
-    document.getElementById("p_result").innerHTML = 'ค่าปกครองที่ได้ : ' + p_sum;
-    document.getElementById("c_result").innerHTML = 'ค่าสเน่ห์ที่ได้ : ' + c_sum;
+    document.getElementById("result").innerHTML = r_sum;
+    document.getElementById("s_result").innerHTML = s_sum;
+    document.getElementById("i_result").innerHTML = i_sum;
+    document.getElementById("p_result").innerHTML =  p_sum;
+    document.getElementById("c_result").innerHTML = c_sum;
 
     Swal.fire({
 
